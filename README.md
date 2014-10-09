@@ -26,7 +26,7 @@ var l2norm = require( 'compute-l2norm' );
 
 Computes the _L2_ norm (Euclidean norm) of an array of values.
 
-```
+``` javascript
 var data = [ 2, 7, 3, -3, 9 ];
 
 var norm = l2norm( data );
