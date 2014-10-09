@@ -19,14 +19,32 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var lib = require( 'compute-l2norm' );
+var l2norm = require( 'compute-l2norm' );
+```
+
+#### l2norm( arr )
+
+Computes the _L2_ norm (Euclidean norm) of an array of values.
+
+```
+var data = [ 2, 7, 3, -3, 9 ];
+
+var norm = l2norm( data );
+// returns ~12.3288
 ```
 
 
 ## Examples
 
 ``` javascript
-var lib = require( 'compute-l2norm' );
+var l2norm = require( 'compute-l2norm' );
+
+var data = new Array( 1000 );
+for ( var i = 0; i < data.length; i++ ) {
+	data[ i ] = Math.random() * 100;
+}
+
+console.log( l2norm( data ) );
 ```
 
 To run the example code from the top-level application directory,
@@ -34,6 +52,13 @@ To run the example code from the top-level application directory,
 ``` bash
 $ node ./examples/index.js
 ```
+
+
+## Prior Art
+
+- 	Dahlquist, Germund and Bjorck, Ake. _Numerical Methods in Scientific Computing_
+- 	Blue, James (1978) "A Portable Fortran Program To Find the Euclidean Norm of a Vector". _ACM Transactions on Mathematical Software_.
+- 	Higham, Nicholas J. _Accuracy and Stability of Numerical Algorithms, Second Edition_
 
 
 ## Tests

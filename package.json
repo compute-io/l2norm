@@ -25,7 +25,12 @@
   "keywords": [
     "compute.io",
     "compute",
-    "computation"
+    "computation",
+    "mathematics",
+    "math",
+    "linear algebra",
+    "norm",
+    "euclidean norm"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/l2norm/issues"
