@@ -60,6 +60,8 @@ $ node ./examples/index.js
 - 	Blue, James (1978) "A Portable Fortran Program To Find the Euclidean Norm of a Vector". _ACM Transactions on Mathematical Software_.
 - 	Higham, Nicholas J. _Accuracy and Stability of Numerical Algorithms, Second Edition_.
 
+This module implements a one-pass algorithm proposed by S.J. Hammarling.
+
 
 ## Tests
 
