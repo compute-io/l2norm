@@ -2,7 +2,7 @@ l2norm
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Computes the L2 norm (Euclidean norm) of an array of values.
+> Computes the L2 norm ([Euclidean norm](http://en.wikipedia.org/wiki/Norm_(mathematics))) of an array of values.
 
 
 ## Installation
@@ -54,11 +54,11 @@ $ node ./examples/index.js
 ```
 
 
-## Prior Art
+## References
 
-- 	Dahlquist, Germund and Bjorck, Ake. _Numerical Methods in Scientific Computing_
+- 	Dahlquist, Germund and Bjorck, Ake. _Numerical Methods in Scientific Computing_.
 - 	Blue, James (1978) "A Portable Fortran Program To Find the Euclidean Norm of a Vector". _ACM Transactions on Mathematical Software_.
-- 	Higham, Nicholas J. _Accuracy and Stability of Numerical Algorithms, Second Edition_
+- 	Higham, Nicholas J. _Accuracy and Stability of Numerical Algorithms, Second Edition_.
 
 
 ## Tests
