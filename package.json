@@ -30,7 +30,8 @@
     "math",
     "linear algebra",
     "norm",
-    "euclidean norm"
+    "euclidean norm",
+    "l2norm"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/l2norm/issues"
