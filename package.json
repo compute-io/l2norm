@@ -40,7 +40,10 @@
   "bugs": {
     "url": "https://github.com/compute-io/l2norm/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "validate.io-array": "^1.0.3",
+    "validate.io-function": "^1.0.2"
+  },
   "devDependencies": {
     "chai": "2.x.x",
     "mocha": "2.x.x",
