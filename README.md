@@ -16,13 +16,12 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 
 ## Usage
 
-To use the module,
 
 ``` javascript
 var l2norm = require( 'compute-l2norm' );
 ```
 
-#### l2norm( arr )
+#### l2norm( arr[, accessor] )
 
 Computes the _L2_ norm (Euclidean norm) of an `array` of values.
 
@@ -31,6 +30,22 @@ var data = [ 2, 7, 3, -3, 9 ];
 
 var norm = l2norm( data );
 // returns ~12.3288
+```
+
+For object `arrays`, provide an accessor `function` for accessing `array` values.
+
+``` javascript
+var data = [
+	['beep', 3],
+	['boop', 4]
+];
+
+function getValue( d, i ) {
+	return d[ 1 ];
+}
+
+var res = l2norm( data, getValue );
+// returns 5
 ```
 
 
@@ -67,7 +82,7 @@ This module implements a one-pass algorithm proposed by S.J. Hammarling.
 
 ### Unit
 
-Unit tests use the [Mocha](http://visionmedia.github.io/mocha) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
+Unit tests use the [Mocha](http://mochajs.org) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test
@@ -91,15 +106,15 @@ $ make view-cov
 ```
 
 
+---
 ## License
 
-[MIT license](http://opensource.org/licenses/MIT). 
+[MIT license](http://opensource.org/licenses/MIT).
 
 
----
 ## Copyright
 
-Copyright &copy; 2014. Athan Reines.
+Copyright &copy; 2014-2015. Athan Reines.
 
 
 [npm-image]: http://img.shields.io/npm/v/compute-l2norm.svg

@@ -1,3 +1,4 @@
+'use strict';
 
 // MODULES //
 
@@ -17,7 +18,6 @@ var expect = chai.expect,
 // TESTS //
 
 describe( 'compute-l2norm', function tests() {
-	'use strict';
 
 	it( 'should export a function', function test() {
 		expect( l2norm ).to.be.a( 'function' );
@@ -46,6 +46,28 @@ describe( 'compute-l2norm', function tests() {
 		}
 	});
 
+	it( 'should throw an error if provided an accessor which is not a function', function test() {
+		var values = [
+			'5',
+			5,
+			true,
+			undefined,
+			null,
+			NaN,
+			[],
+			{}
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			expect( badValue( values[ i ] ) ).to.throw( TypeError );
+		}
+		function badValue( value ) {
+			return function() {
+				l2norm( [1,2,3], value );
+			};
+		}
+	});
+
 	it( 'should return the L2 norm', function test() {
 		var data, expected;
 
@@ -67,6 +89,49 @@ describe( 'compute-l2norm', function tests() {
 		expected = Math.sqrt( sum );
 
 		assert.strictEqual( l2norm( data ), expected );
+	});
+
+
+	it( 'should return the L2 norm using an accessor function', function test() {
+		var data, expected, actual;
+
+		data = [
+			{'x':3},
+			{'x':4}
+		];
+
+		actual = l2norm( data, getValue );
+		expected = 5;
+
+		assert.deepEqual( actual, expected );
+
+		function getValue( d ) {
+			return d.x;
+		}
+	});
+
+	it( 'should return the L2 norm  using an accessor function', function test() {
+		var data, d, sum, expected;
+
+		data = [
+			{'x':3},
+			{'x':4},
+			{'x':20},
+			{'x':-10},
+			{'x':0}
+		];
+		sum = 0;
+		for ( var i = 0; i < data.length; i++ ) {
+			d = getValue( data[ i ] );
+			sum += d * d;
+		}
+		expected = Math.sqrt( sum );
+
+		assert.strictEqual( l2norm( data, getValue ), expected );
+
+		function getValue( d ) {
+			return d.x;
+		}
 	});
 
 });
