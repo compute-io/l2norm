@@ -1,3 +1,5 @@
+'use strict';
+
 var l2norm = require( './../lib' );
 
 var data = new Array( 1000 );

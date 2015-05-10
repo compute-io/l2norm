@@ -35,7 +35,13 @@
     "linear algebra",
     "norm",
     "euclidean norm",
-    "l2norm"
+    "l2norm",
+    "l2 distance",
+    "euclidean length",
+    "length",
+    "distance",
+    "array",
+    "vector"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/l2norm/issues"
