@@ -1,3 +1,4 @@
+/* global require, describe, it */
 'use strict';
 
 // MODULES //
@@ -25,15 +26,15 @@ describe( 'compute-l2norm', function tests() {
 
 	it( 'should throw an error if not provided an array', function test() {
 		var values = [
-				'5',
-				5,
-				null,
-				undefined,
-				NaN,
-				true,
-				{},
-				function(){}
-			];
+			'5',
+			5,
+			null,
+			undefined,
+			NaN,
+			true,
+			{},
+			function(){}
+		];
 
 		for ( var i = 0; i < values.length; i++ ) {
 			expect( badValue( values[i] ) ).to.throw( TypeError );
@@ -66,6 +67,10 @@ describe( 'compute-l2norm', function tests() {
 				l2norm( [1,2,3], value );
 			};
 		}
+	});
+
+	it( 'should return null if provided an empty array', function test() {
+		assert.isNull( l2norm( [] ) );
 	});
 
 	it( 'should return the L2 norm', function test() {

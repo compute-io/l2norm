@@ -2,7 +2,7 @@ L2 norm
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Computes the L2 norm ([Euclidean norm](http://en.wikipedia.org/wiki/Norm_(mathematics))) of an array of values.
+> Computes the L2 norm ([Euclidean norm](http://en.wikipedia.org/wiki/Norm_(mathematics))) of an array.
 
 
 ## Installation
@@ -16,14 +16,13 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 
 ## Usage
 
-
 ``` javascript
 var l2norm = require( 'compute-l2norm' );
 ```
 
 #### l2norm( arr[, accessor] )
 
-Computes the _L2_ norm (Euclidean norm) of an `array` of values.
+Computes the _L2_ norm (Euclidean norm) of an `array`.
 
 ``` javascript
 var data = [ 2, 7, 3, -3, 9 ];
@@ -44,9 +43,11 @@ function getValue( d, i ) {
 	return d[ 1 ];
 }
 
-var res = l2norm( data, getValue );
+var norm = l2norm( data, getValue );
 // returns 5
 ```
+
+If provided an empty `array`, the function returns `null`.
 
 
 ## Examples
